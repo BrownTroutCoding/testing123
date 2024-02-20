@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+  
+body {
+    background-color: rgb(1, 4, 9);
+    min-height: 100vh;
+}
+  
+h1, h2, h3, h4, h5, h6, span {
+    color: rgb(230, 235, 241);
+    text-align: center;
+    line-height: 1.5;
+}
+  
+h1 {
+    font-size: 31px;
+}
+  
+p {
+    line-height: 1.5;
+    font-size: 20px;
+}
+  
+nav {
+    height: 75px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 13.5em;
+}
+  
+.dropdown {
+    min-width: 15rem;
+    position: relative;
+    margin: 2em;
+}
+  
+.select {
+    background: rgb(13, 16, 23);
+    color: rgb(230, 235, 241);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+}
+  
+.select:hover {
+    background-color: #323741;
+}
+  
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid rgb(230, 235, 241);
+    transition: 0.3s;
+}
+  
+.menu {
+    list-style: none;
+    padding: 0.1em 0.25em;
+    background: #323741;
+    border: 1px #363a43 solid;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: rgb(230, 235, 241);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+  
+.dropdown:hover .menu {
+    display: block;
+}
+  
+.menu li {
+    padding: 0.3em 0.2em;
+    border-radius: 0.5em;
+}
+  
+.menu li:hover {
+    background: #2a2d35;
+}
+  
+.nav-anchor {
+    margin: 0 12px;
+    color: rgb(230, 235, 241);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Small phones, tablets, large smartphones */
+@media (max-width: 768px) {
+    nav {
+        height: 68px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .about-me-p {
+        font-size: 18px;
+    }
+
+    .language {
+        width: calc(100% / 3);
+    }
+
+    .project-description-p {
+        font-size: 14px;
+    }
+
+    .project-description {
+        left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+.title {
+    font-size: 24px;
+    color: rgba(92,172,255,255);
+    margin: 0 12px;
+    font: bold;
+    padding-left: 10px;
+}
+
+
+/* TECH STACK */
+
+.section-title {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.language-img {
+  width: 100%;
+  max-width: 100px;
+  transition: all 300ms;
+}
+.language:hover .language-img {
+  filter: brightness(80%);
+  opacity: 0.86;
+  transform: scale(0.9);
+}
+
+.language {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.language-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 16px;
+}
+
+.language-list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.language-name {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 300ms;
+  font-size: 20px;
+  opacity: 0;
+}
+.language:hover .language-name {
+  transform: scale(1);
+  opacity: 1;
+}
+
+  /* PROJECTS */
+
+.project {
+  margin-bottom: 135px;
+}
+  
+.project:last-child {
+  margin-bottom: 40px;
+}
+
+.project-img {
+  width: 100%;
+  transition: all 500ms ease;
+}
+
+.project-wrap {
+  display: flex;
+  box-shadow: 0 20px 80px rgb(57, 57, 57);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.project-wrap:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1c1d25;
+  opacity: 0;
+  transition: all 450ms ease;
+  z-index: 2;
+  transform: translateY(100%);
+}
+.project:hover .project-wrap:before {
+  transform: translateY(0);
+  opacity: 0.7;
+}
+.project:hover .project-img {
+  transform: scale(1.07);
+  filter: blur(5px);
+}
+
+.project:hover .project-description {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.project-list {
+  padding-top: 40px;
+}
+
+.project-description {
+  position: absolute;
+  top: 50%;
+  left: 90px;
+  transform: translateY(100%);
+  max-width: 550px;
+  z-index: 3;
+  opacity: 0;
+  transition: transform 450ms, opacity 300ms;
+}
+
+.project-title {
+  font-size: 40px;
+}
+
+.project-p {
+  margin: 16px 0;
+  text-decoration: none;
+}
+
+.project-link {
+  font-size: 20px;
+  margin-right: 16px;
+}
+
+.project-title,
+.project-languages,
+.project-p,
+.project-link {
+  text-align: left;
+  color: rgb(230, 235, 241);
+}
